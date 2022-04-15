@@ -82,6 +82,13 @@ class _TodoListState extends State<TodoList> {
     _textFieldController.clear();
   }
 
+  // Remove element TODO: create button with x svg on map
+  void _removeItem(Todo todo){
+    setState(() {
+      _todos.removeWhere((element) => element == todo);
+    });
+  }
+
   Future<void> _displayDialog() async {
     return showDialog<void>(
       context: context,
